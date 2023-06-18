@@ -26,7 +26,7 @@ Image Augmentor is a Python application that allows you to perform various image
 
 ## License
 
-This project is licensed under the Apache 2.0 license. Please refer to the [LICENSE.md](LICENSE.md) file for more information.
+This project is licensed under the Apache 2.0 license. Please refer to the [[LICENSE.md](https://github.com/TahaKh99/Image_Augmentor/blob/main/LICENSE)](LICENSE.md) file for more information.
 
 ## Disclaimer
 
