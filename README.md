@@ -11,7 +11,7 @@ Image Augmentor is a Python application that allows you to perform various image
 - Flip (4): Generate four flipped images from the input image.
 - Change Brightness (5): Generate five images with varying brightness levels from the input image.
 - Add Noise (5): Generate five images with added noise from the input image.
-- generate a labeling file and annotation file
+- Generate a labeling file and annotation file
 
 ## Usage
 
