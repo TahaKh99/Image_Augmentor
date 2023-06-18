@@ -295,6 +295,12 @@ class ImageAugmentor(QMainWindow):
         self.add_augmentation_checkbox("Flip (4)")
         self.add_augmentation_checkbox("Change Brightness (5)")
         self.add_augmentation_checkbox("Add Noise (5)")
+        self.add_augmentation_checkbox("Simulate cloud effect (5)")
+        self.add_augmentation_checkbox("Simulate fog effect (5)")
+        self.add_augmentation_checkbox("Simulate rain effect (5)")
+        self.add_augmentation_checkbox("Simulate snow effect (5)")
+        self.add_augmentation_checkbox("Simulate sun flare effect (5)")
+
 
         # Select All Checkbox
         self.select_all_checkbox = QCheckBox("Select All", self.central_widget)
@@ -385,7 +391,14 @@ class ImageAugmentor(QMainWindow):
                     "Zoom (4)": "Zoomed_Images",
                     "Flip (4)": "Flipped_Images",
                     "Change Brightness (5)": "Brightness_Images",
-                    "Add Noise (5)": "Noisy_Images"
+                    "Add Noise (5)": "Noisy_Images",
+                    "Simulate cloud effect (5)": "Cloudy_Images",
+                    "Simulate fog  effect": "fog _Images",
+                    "Simulate rain  effect": "rainy_Images",
+                    "Simulate snow   effect": "snowy_Images",
+                    "Simulate sun flare effect": "sun_flare_Images",
+
+
                                     }
             image_directory = self.image_directory_edit.text()
             save_directory = self.save_directory_edit.text()
@@ -482,6 +495,58 @@ class ImageAugmentor(QMainWindow):
                             self.add_salt_pepper_noise_images_with_torchvision()
                         else:
                             self.add_salt_pepper_noise(image_directory,  num_images=5,  augmentation_path = augmentation_path)
+                            
+                    elif text.startswith("Simulate cloud effect"):
+                        if augmentation_library == "imgaug":
+                            self.add_cloud_effect_with_imagau(image_directory,  num_images=4, augmentation_path = augmentation_path)
+                        elif augmentation_library == "albumentations":
+                            self.add_cloud_effect_with_albumentations()
+                        elif augmentation_library == "torchvision":
+                            self.add_cloud_effect_with_torchvision()
+                        else:
+                            self.add_cloud_effect(image_directory,  num_images=5,  augmentation_path = augmentation_path)
+
+
+                    elif text.startswith("Simulate fog  effect"):
+                        if augmentation_library == "imgaug":
+                            self.add_fog_effect_with_imagau(image_directory,  num_images=4, augmentation_path = augmentation_path)
+                        elif augmentation_library == "albumentations":
+                            self.add_fog_effect_with_albumentations(image_directory,  num_images=4, augmentation_path = augmentation_path)
+                        elif augmentation_library == "torchvision":
+                            self.add_fog_effect_with_torchvision()
+                        else:
+                            self.add_fog_effect(image_directory,  num_images=5,  augmentation_path = augmentation_path)
+
+
+                    elif text.startswith("Simulate rain  effect"):
+                        if augmentation_library == "imgaug":
+                            self.add_rain_effect_with_imagau(image_directory,  num_images=4, augmentation_path = augmentation_path)
+                        elif augmentation_library == "albumentations":
+                            self.add_rain_effect_with_albumentations(image_directory,  num_images=4, augmentation_path = augmentation_path)
+                        elif augmentation_library == "torchvision":
+                            self.add_rain_effect_with_torchvision()
+                        else:
+                            self.add_rain_effect(image_directory,  num_images=5,  augmentation_path = augmentation_path)
+
+                    elif text.startswith("Simulate snow   effect"):
+                        if augmentation_library == "imgaug":
+                            self.add_snow_effect_with_imagau(image_directory,  num_images=4, augmentation_path = augmentation_path)
+                        elif augmentation_library == "albumentations":
+                            self.add_snow_effect_with_albumentations(image_directory,  num_images=4, augmentation_path = augmentation_path)
+                        elif augmentation_library == "torchvision":
+                            self.add_snow_effect_with_torchvision()
+                        else:
+                            self.add_snow_effect(image_directory,  num_images=5,  augmentation_path = augmentation_path)
+
+                    elif text.startswith("Simulate sun flare effect"):
+                        if augmentation_library == "imgaug":
+                            self.add_sun_flare_effect_with_imagau(image_directory,  num_images=4, augmentation_path = augmentation_path)
+                        elif augmentation_library == "albumentations":
+                            self.add_sun_flare_effect_with_albumentations(image_directory,  num_images=4, augmentation_path = augmentation_path)
+                        elif augmentation_library == "torchvision":
+                            self.add_sun_flare_effect_with_with_torchvision()
+                        else:
+                            self.add_sun_flare_effect(image_directory,  num_images=5,  augmentation_path = augmentation_path)
 
         except Exception as e:
             QMessageBox.warning(self,"Error", str(e))   
@@ -1018,6 +1083,36 @@ class ImageAugmentor(QMainWindow):
     def add_salt_pepper_noise_images_with_torchvision(self):
             QMessageBox.warning(self, "Warning", "Noise injection is not available with torchvision!")
 
+
+# add_cloud_effect..............................................
+    def add_cloud_effect_with_imagau(self, image_directory, num_images, augmentation_path):
+        seq = iaa.Clouds()  # Simulates cloud effect
+         
+        # Iterate over each image in the directory
+        image_files = os.listdir(image_directory)
+        for file in image_files:
+            img_path = os.path.join(image_directory, file)
+            img = Image.open(img_path)
+            img_arr = np.array(img)
+
+            # Apply augmentation multiple times
+            for i in range(num_images):
+                augmented_img_arr = seq.augment_image(img_arr)
+                augmented_img = Image.fromarray(augmented_img_arr)
+
+                # Save the augmented image
+                new_file = f"Cloudy_img{i}_{file}"
+                save_path = os.path.join(augmentation_path, new_file)
+                augmented_img.save(save_path)
+
+        QMessageBox.information(self, "Augmentation completed", "CLoud simulation augmentation completed!")
+    
+    def add_cloud_effect_with_albumentations(self):
+        
+        QMessageBox.warning(self, "Augmentation Failed", "cloud simulation is not available with Albumentations!")
+    def add_cloud_effect_with_torchvision(self):
+        
+        QMessageBox.warning(self, "Augmentation Failed", "cloud simulation is not available with torchvision!")
 
 
 
