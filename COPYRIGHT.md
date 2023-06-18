@@ -1,6 +1,6 @@
-COPYRIGHT NOTICE
+# COPYRIGHT NOTICE
 
-Image Augmentor - Copyright (c) 2023 Taha Khamis
+## Image Augmentor - Copyright (c) 2023 Taha Khamis
 
 All rights reserved.
 
