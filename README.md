@@ -2,6 +2,8 @@
 
 Image Augmentor is a Python application that allows you to perform various image augmentation techniques on a folder of images. It provides an easy-to-use interface to choose from seven augmentation techniques and generate augmented images for each technique.
 
+![Image_Augmentor](https://github.com/TahaKh99/Image_Augmentor/assets/100087116/3a5c4889-3e56-4b01-9c76-db3627701f85)
+
 ## Features
 
 - Rotate (7): Generate seven rotated images from the input image.
