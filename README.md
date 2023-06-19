@@ -33,11 +33,11 @@ Image Augmentor is a Python application that allows you to perform various image
 9. Optionally, generate a labeling file and annotation file for the augmented images using the provided buttons.
 ![Image Augmentor](https://github.com/TahaKh99/Image_Augmentor/assets/100087116/7ca344cd-334e-458b-9e95-5dddd795d68b)
 
-![Image Augmentor](https://github.com/TahaKh99/Image_Augmentor/assets/100087116/4d2ab3df-da27-442a-a05a-a1910776f517)
+![Rain augmentation ](https://github.com/TahaKh99/Image_Augmentor/assets/100087116/3fe06985-c008-4717-a37f-681950ea86c7)
 
-![Rain augmentation ](https://github.com/TahaKh99/Image_Augmentor/assets/100087116/8dec81da-9753-47b0-a236-af7007f77c5f)
 
-![warning message ](https://github.com/TahaKh99/Image_Augmentor/assets/100087116/345d89bd-e9ef-4a27-971c-986ca39cb5d2)
+![warning message ](https://github.com/TahaKh99/Image_Augmentor/assets/100087116/2cf0dbc6-e7d0-4b71-8ae7-68450182ad3f)
+
 
 ## License
 
