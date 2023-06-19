@@ -31,6 +31,7 @@ Image Augmentor is a Python application that allows you to perform various image
 7. Check the augmentation techniques you want to apply.
 8. Click the "Apply Augmentation" button to start the augmentation process.
 9. Optionally, generate a labeling file and annotation file for the augmented images using the provided buttons.
+![Image Augmentor](https://github.com/TahaKh99/Image_Augmentor/assets/100087116/7ca344cd-334e-458b-9e95-5dddd795d68b)
 
 ![Image Augmentor](https://github.com/TahaKh99/Image_Augmentor/assets/100087116/4d2ab3df-da27-442a-a05a-a1910776f517)
 
