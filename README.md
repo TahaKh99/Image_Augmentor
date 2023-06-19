@@ -13,6 +13,11 @@ Image Augmentor is a Python application that allows you to perform various image
 - Flip (4): Generate four flipped images from the input image.
 - Change Brightness (5): Generate five images with varying brightness levels from the input image.
 - Add Noise (5): Generate five images with added noise from the input image.
+- Simulate Cloud Effect (5): Generate five images with an added cloud effect from the input image.
+- Simulate Fog Effect (5): Generate five images with an added Fog effect from the input image.
+- Simulate Rain Effect (5): Generate five images with an added Rain effect from the input image.
+- Simulate Snow Effect (5): Generate five images with an added cloud effect from the input image.
+- Simulate Sun flare Effect (5): Generate five images with an added Sun flare effect from the input image.
 - Generate a labeling file and annotation file
 
 ## Usage
